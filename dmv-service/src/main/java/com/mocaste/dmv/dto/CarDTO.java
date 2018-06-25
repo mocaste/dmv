@@ -1,34 +1,30 @@
 package com.mocaste.dmv.dto;
 
+import com.mocaste.dmv.client.dto.Car;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.Accessors;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@EqualsAndHashCode
 public class CarDTO {
 
-    private  Long id;
+    private Long id;
 
-    private final String make;
+    private String make;
 
-    private final String year;
+    private String year;
 
-    private final String model;
+    private String model;
 
-    public CarDTO( String make, String year, String model) {
-        this.make = make;
-        this.year = year;
-        this.model = model;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getMake() {
-        return make;
-    }
-
-    public String getYear() {
-        return year;
-    }
-
-    public String getModel() {
-        return model;
+    public CarDTO(Car car) {
+        this.id = car.getId();
+        this.make = car.getMake();
+        this.model = car.getModel();
+        this.year = car.getModel();
     }
 }

@@ -9,7 +9,9 @@
     <modules>
         <module>config-service</module>
         <module>eureka-service</module>
-        <module>dmv-repository</module>
+        <module>registration-repository</module>
+        <module>car-repository</module>
+        <module>owner-repository</module>
         <module>dmv-service</module>
     </modules>
 </project>

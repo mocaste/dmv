@@ -1,35 +1,30 @@
 package com.mocaste.dmv.dto;
 
+
+import com.mocaste.dmv.client.dto.Owner;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@EqualsAndHashCode
 public class OwnerDTO {
 
-    private  Long id;
+    private Long id;
 
-    private final String name;
+    private String name;
 
-    private final String age;
+    private Integer age;
 
-    private final String address;
+    private String address;
 
-    public OwnerDTO( String name, String age, String address) {
-
-        this.name = name;
-        this.age = age;
-        this.address = address;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public String getAddress() {
-        return address;
+    public OwnerDTO(Owner owner) {
+        this.id = owner.getId();
+        this.name = owner.getName();
+        this.age = owner.getAge();
+        this.address = owner.getAddress();
     }
 }

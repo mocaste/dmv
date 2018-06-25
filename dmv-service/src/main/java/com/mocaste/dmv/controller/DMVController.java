@@ -2,7 +2,7 @@ package com.mocaste.dmv.controller;
 
 import com.mocaste.dmv.dto.RegistrationDTO;
 
-import com.mocaste.dmv.service.CarService;
+import com.mocaste.dmv.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +11,15 @@ import org.springframework.web.bind.annotation.*;
 public class DMVController {
 
     @Autowired
-    CarService carService;
+    RegistrationService registrationService;
 
-    @GetMapping(value="/{plateNumber}")
-    RegistrationDTO getRegistration(@PathVariable String plateNumber){
-        return carService.getReservationByPlateNumber(plateNumber);
+    /**
+     * Retrieve registration by id
+     * @param registrationId
+     * @return
+     */
+    @GetMapping(value="/{id}")
+    RegistrationDTO getRegistrationById(@PathVariable("id") Long registrationId){
+        return registrationService.getRegistrationById(registrationId);
     }
 }

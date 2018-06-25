@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 @Entity
 public class Owner {
 
@@ -13,11 +17,14 @@ public class Owner {
 
     private String name;
 
-    private String age;
+    private Integer age;
 
     private String address;
 
-    public Owner(String name, String age, String address) {
+    public Owner() {
+    }
+
+    public Owner(String name, Integer age, String address) {
         this.name = name;
         this.age = age;
         this.address = address;
@@ -31,11 +38,47 @@ public class Owner {
         return name;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
     public String getAddress() {
         return address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Owner owner = (Owner) o;
+
+        return new EqualsBuilder()
+                .append(id, owner.id)
+                .append(name, owner.name)
+                .append(age, owner.age)
+                .append(address, owner.address)
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(id)
+                .append(name)
+                .append(age)
+                .append(address)
+                .toHashCode();
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("id", id)
+                .append("name", name)
+                .append("age", age)
+                .append("address", address)
+                .toString();
     }
 }
