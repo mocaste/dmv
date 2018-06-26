@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(DMVControllerTest.class)
+@WebMvcTest(DMVController.class)
 public class DMVControllerIntegrationTest {
 
     @Autowired
