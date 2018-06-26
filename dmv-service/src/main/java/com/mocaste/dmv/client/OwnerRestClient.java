@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-@FeignClient("http://owner-repository")
+@FeignClient("owner-repository")
 public interface OwnerRestClient {
 
     /**
