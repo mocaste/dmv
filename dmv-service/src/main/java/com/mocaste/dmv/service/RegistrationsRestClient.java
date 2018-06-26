@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @EnableFeignClients
 @EnableDiscoveryClient
-@FeignClient("car-repository")
+@FeignClient("registration-repository")
 public interface RegistrationsRestClient {
 
     @RequestMapping(value = "/registrations/plateNumber", method = RequestMethod.GET)
