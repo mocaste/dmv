@@ -2,6 +2,12 @@
 -
 Simple application used for registering cars.
 
+
+DMV Service is the entry point into the application. It exposes different endpoints.(Eg. GET /registrations/{id}), contains business related logic.
+Behind the scenes DMV Service is making calls to registration repository to retrieve data related to registrations, to car repository service to retrieve car information data 
+and to owner repository service to retrieve owner related data.
+
+
 **Components**
 -
 
